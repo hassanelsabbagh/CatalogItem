@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+  <header class="header">
+      <h1 class="titlediv">Catalog App</h1>
+      <button class="login">Logout</button>
+  </header>
+  <section class="midiv">
+    <div class="maindiv">
+  <h1>Add Item</h1>
+  <form action="{{url_for('addItem', item_name=i)}}" method='post'>
+    <p>Title:</p>
+    <input type="text" size="30px" name="title">
+    </br>
+    <p>Description:</p>
+    <input type="text" size="50px" name="description">
+    </br>
+    <p>Category:</p>
+    <select name="catego">
+      {% for i in categories %}
+      <option value="{{i.name}}">{{i.name}}</option>
+      {% endfor %}
+    </select>
+    </br>
+    </br>
+    <input type="submit" value="Add">
+ </form>
+</div>
+</section>
+</body>
+</html>

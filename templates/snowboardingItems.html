@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+  <header class="header">
+      <h1 class="titlediv">Catalog App</h1>
+      <a href="{{url_for('showLogin')}}">
+      <button class="login">Login</button>
+    </a>
+  </header>
+  <section class="midiv">
+    <div class="catdiv">
+      <h1 class="headerinner">Categories</h1>
+      {% for i in allcategories %}
+      <ul class="list">
+        <li><a href="{{url_for('listItems', category_name = i.name)}}">{{i.name}}</a></li>
+
+      </ul>
+      {% endfor %}
+    </div>
+    <div class="line">
+    <svg height="350" width="10">
+      <line x1="0" y1="0" x2="0" y2="360"/>
+    </svg>
+    </div>
+    <div class="latestdiv">
+      <div class="headerlatest">
+        <h1 class="latestheader">{{categor.name}}</h1>
+
+        <div class="listdiv">
+          {% for i in allitems %}
+          <ul class="list">
+            <li><a href='{{url_for('listdesc', category_name = categor, item_name = i.name)}}'>{{i.name}}</a></li>
+
+          </ul>
+        {% endfor %}
+      </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>

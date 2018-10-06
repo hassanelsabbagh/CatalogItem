@@ -1,0 +1,23 @@
+<html>
+<head>
+  <link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+
+  <header class="header">
+      <h1 class="titlediv">Catalog App</h1>
+      <a href="login.html">
+      <button class="login">Login</button>
+    </a>
+  </header>
+  <section class="midiv">
+    <div class="maindiv">
+    <h1 class="cathead">{{item.name}}</h1>
+
+    <p class="para">Description:
+      {{item.description}}
+     </p>
+   </div>
+  </section>
+</body>
+</html>

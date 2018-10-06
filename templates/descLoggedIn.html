@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+  <header class="header">
+      <h1 class="titlediv">Catalog App</h1>
+      <a href="{{url_for('Gdisconnect')}}">
+      <button class="login">
+        Logout
+      </button>
+    </a>
+  </header>
+  <section class="midiv">
+    <div class="maindiv">
+    <h1 class="snowheader">{{item.name}}</h1>
+    <p class="para">Description:
+      {{item.description}}
+     </p>
+     <div class="edgen">
+     <div class="ed">
+     <a href="{{url_for('editItem', category_name =item.categories.name, item_name = item.name)}}">Edit</a>
+   </div>
+   <div class="ed2">
+     <p> | </p>
+   </div>
+   <div class="ed3">
+     <a href="{{url_for('delItem', category_name =item.categories.name, item_name = item.name)}}">Delete</a>
+   </div>
+ </div>
+</div>
+  </section>
+</body>
+</html>
